@@ -73,6 +73,22 @@ class LinkedList(List.List):
 		self.__size__ -= 1
 		return node
 
+	def unlinkFirst(self):
+		ret = self.__head__.next
+
+		ret.next.prev = self.__head__
+		self.__head__.next = ret.next
+		
+		return ret
+
+	def unlinkLast(self):
+		ret = self.__tail__.prev
+
+		ret.prev.next = self.__tail__
+		self.__tail__.prev = ret.prev
+
+		return ret
+
 	def remove(self, index):
 
 		if index < 0 or index > self.__size__ -1:
@@ -88,10 +104,9 @@ class LinkedList(List.List):
 		
 		x = self.__head__.next
 
-		while x != None:
+		while x != None and x != self.__tail__:
 			arr.append(x.data)
 			x = x.next
-	
 		return arr
 
 if __name__ == '__main__':
@@ -106,6 +121,9 @@ if __name__ == '__main__':
 	list.get(3)
 	list.remove(3)
 	list.get(3)
+
+	list.unlinkFirst()
+	list.unlinkLast()
 
 	iterator = Iterator.Iterator(list)
 	

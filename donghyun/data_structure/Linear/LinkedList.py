@@ -58,11 +58,16 @@ class LinkedList(List.List):
 			return x
 
 	def get(self, index):
-		
 		if index < 0 or index > self.__size__-1:
 			raise IndexError
 
 		return self.node(index).data
+
+	def getFirst(self):
+		return self.__head__.next.data
+
+	def getLast(self):
+		return self.__tail__.prev.data
 
 	def unlink(self, node):
 		ret = node

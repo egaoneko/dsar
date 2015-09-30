@@ -84,6 +84,7 @@ class LinkedList(List.List):
 		ret.next.prev = self.__head__
 		self.__head__.next = ret.next
 		
+		self.__size__ -= 1
 		return ret
 
 	def unlinkLast(self):
@@ -92,6 +93,7 @@ class LinkedList(List.List):
 		ret.prev.next = self.__tail__
 		self.__tail__.prev = ret.prev
 
+		self.__size__ -= 1
 		return ret
 
 	def remove(self, index):

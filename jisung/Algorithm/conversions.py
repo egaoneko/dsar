@@ -1,6 +1,5 @@
 #__author__ = 'jeonjiseong'
 
-from __future__ import division
 import sys
 
 def convert(string,index):

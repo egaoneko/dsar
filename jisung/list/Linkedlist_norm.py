@@ -5,6 +5,7 @@ __author__ = 'jeonjiseong'
 class node:
     def __init__(self,data=None,nextNode=None):
         self.data = data
+        #self.preNode = preNode
         self.nextNode = nextNode
 
     def __str__(self):
@@ -13,8 +14,7 @@ class node:
 class LinkedList:
     def __init__(self):
         self.firstNode = None
-        self.lastNode = None
-
+        self.lastNode = None 
     def __str__(self):
         if self.firstNode != None:
             current = self.firstNode

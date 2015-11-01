@@ -6,54 +6,55 @@ __version__ = '1.0'
 import Iterator
 import LinkedList
 
+
 class Queue:
-	'''Queue Class.
+    '''Queue Class.
 
-	This queue class is uesd for storing datas.
-	And this class is consist of link.'''
+    This queue class is uesd for storing datas.
+    And this class is consist of link.'''
 
-	def __init__(self):
-		self.__list__ = LinkedList.LinkedList()
-		
-	def isEmpty(self):
-		if len(self.__list__) == 0:
-			return True
-		else:
-			return False
+    def __init__(self):
+        self.__list__ = LinkedList.LinkedList()
 
-	def enQueue(self, data):
-		self.__list__.linkLast(data)
+    def isEmpty(self):
+        if len(self.__list__) == 0:
+            return True
+        else:
+            return False
 
-	def deQueue(self):
-		data = self.peek()
-		self.__list__.unlinkFirst()
-		return data
+    def enQueue(self, data):
+        self.__list__.linkLast(data)
 
-	def peek(self):
-		if self.isEmpty():
-			raise EmptyError
+    def deQueue(self):
+        data = self.peek()
+        self.__list__.unlinkFirst()
+        return data
 
-		return self.__list__.getFirst()
+    def peek(self):
+        if self.isEmpty():
+            raise EmptyError
 
-	def __len__(self):
-		return len(self.__list__)
+        return self.__list__.getFirst()
 
-	def toArray(self):
-		return self.__list__.toArray()
+    def __len__(self):
+        return len(self.__list__)
+
+    def toArray(self):
+        return self.__list__.toArray()
+
 
 if __name__ == '__main__':
-	queue = Queue()
-	queue.enQueue(1)
-	queue.enQueue(2)
-	queue.enQueue(3)
-	queue.enQueue(4)
-	queue.enQueue(5)
+    queue = Queue()
+    queue.enQueue(1)
+    queue.enQueue(2)
+    queue.enQueue(3)
+    queue.enQueue(4)
+    queue.enQueue(5)
 
-	print(queue.peek())
-	print(queue.deQueue())
+    print(queue.peek())
+    print(queue.deQueue())
 
+    iterator = Iterator.Iterator(queue)
 
-	iterator = Iterator.Iterator(queue)
-	
-	while iterator.hasNext():
-		print(iterator.next())
+    while iterator.hasNext():
+        print(iterator.next())

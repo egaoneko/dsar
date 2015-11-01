@@ -8,10 +8,10 @@ n = int(rl())
 input = list()
 
 for i in range(n):
-	input.append(rl().rstrip())
+    input.append(rl().rstrip())
 
 for s in input:
-	sO = ''.join([x[1] for x in list(filter(lambda x: x[0]%2 == 0,enumerate(list(s))))])
-	sE = ''.join([x[1] for x in list(filter(lambda x: x[0]%2 != 0,enumerate(list(s))))])
+    sO = ''.join([x[1] for x in list(filter(lambda x: x[0] % 2 == 0, enumerate(list(s))))])
+    sE = ''.join([x[1] for x in list(filter(lambda x: x[0] % 2 != 0, enumerate(list(s))))])
 
-	print sO+sE
+    print sO + sE

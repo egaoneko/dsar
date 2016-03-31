@@ -27,8 +27,6 @@ def partition(list, lo, hi):
     mi = getMid(list, lo, hi)
     lo, mi = mi, lo
 
-    print(lo)
-
     while True:
         # while list[lo] > list[i]:
         while list[lo] >= list[i]:

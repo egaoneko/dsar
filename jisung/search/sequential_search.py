@@ -1,17 +1,16 @@
+import jisung.list.Linkedlist_norm as madnList
 __author__ = 'jeonjiseong'
 
-import jisung.list.Linkedlist_norm as madnList
-
-def sequentialsearch(head,target):
-    current = head
+def sequentialsearch(alist, target):
     match = ''
 
-    while current is not None:
-        if current.data == target:
-            match = current
+    for i in alist:
+        if i == target:
+            match = i
             break
-        else:
-            current = current.nextNode
+
+    if match is '':
+        match = "no data"
 
     return match
 
@@ -60,16 +59,6 @@ def transpose(head,target):
     return match
 
 if __name__ == "__main__":
-    l = madnList.LinkedList()
-    l.addNode(1)
-    l.addNode(2)
-    l.addNode(3)
-    l.addNode(4)
-    l.insertNode(2,5)
-    l.deleteNode(2)
-    l.deleteNode(3)
-    l.insertNode(0,0)
-    l.insertNode(1,10)
-    print l
-    findnode = sequentialsearch(l.getNode(0),2)
-    print findnode
+    alist = [1,2,3,4,5,6,7,8]
+    a=sequentialsearch(alist,9)
+    print(a)

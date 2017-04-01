@@ -1,45 +1,44 @@
 __author__ = 'jeonjiseong'
-'''
-def insertionsort(dataset,len):
-    datalist = dataset
-    for i in range(1,len,1):
-        #print "i %d" % i
 
-        for x in range(0,i,1):
-            if datalist[i-1] <= datalist[i]:
-                break
-        #if datalist[i-1] <= datalist[i]:
-        #    continue
 
-        #value = datalist[i]
-        #print value
-        j = 0
-        while j < i:
-            #print "j %d" % j
-            if datalist[j] > datalist[i]:
-                temp = datalist[j]
-                datalist[j] = datalist[i]
-                datalist[i] = temp
-                break
-            j+=1
-            #print j
-    return datalist
-'''
-'''
-def insertionsort(dataset,len):
-    datalist = dataset
+def insertion(data_list):
+    for i in range(1, len(data_list)):
+        key = data_list[i]
+        j = i - 1
+        while j > -1 and data_list[j] > key:
+            data_list[j+1] = data_list[j]
+            j -= 1
+        data_list[j+1] = key
 
-    for i in range(1,len,1):
-        pivot = datalist[i]
-        for x in xrange(i):
-            if datalist[x]
 
 if __name__ == "__main__":
-    dataset = [6,4,2,3,1,5]
+    a = [3,1,2,6,7,4,9,8,0,5]
+    insertion(a)
+    print(a)
 
-    sortedarray = insertionsort(dataset,dataset.__len__())
+'''
+    __author__ = 'jeonjiseong'
 
-    print "Sorted array"
-    for i in sortedarray:
-        print i,
+def make_numbers(mode):
+
+    if mode == "rand":
+        file_inst = open("texts/rand.txt", 'w')
+        for i in range(0, 100000000):
+            file_inst.write(str(randint(0, 100000000))+"\n")
+    elif mode == "seq":
+        file_inst = open("texts/seq.txt", 'w')
+        for i in range(0, 100000000):
+            file_inst.write(str(i)+"\n")
+    elif mode == "inv":
+        file_inst = open("texts/inv.txt", 'w')
+        for i in range(99999999, -1, -1):
+            file_inst.write(str(i)+"\n")
+    else:
+        print("wrong input")
+    file_inst.close()
+
+    #make_numbers("rand")
+    #make_numbers("seq")
+    #make_numbers("inv")
+    #data_set = [line.strip() for line in open("texts/rand.txt", 'r')]
 '''

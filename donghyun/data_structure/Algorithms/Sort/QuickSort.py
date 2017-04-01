@@ -25,7 +25,7 @@ def partition(list, lo, hi):
     j = hi
 
     mi = getMid(list, lo, hi)
-    lo, mi = mi, lo
+    list[lo], list[mi] = list[mi], list[lo]
 
     print(lo)
 

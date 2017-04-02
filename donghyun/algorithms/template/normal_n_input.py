@@ -1,4 +1,4 @@
-# 
+#
 # author : Donghyun Seo (egaoneko@naver.com)
 
 import sys

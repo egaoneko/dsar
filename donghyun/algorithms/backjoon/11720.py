@@ -9,20 +9,19 @@ def rl():
     return sys.stdin.readline()
 
 
-def action(n):
+def action(n, input):
     sum = 0
-    while n/10 > 0:
-        sum += n % 10
-        n = int(n/10)
+    for i in range(n):
+        sum += int(input[i])
     return sum
 
 
 class Test(unittest.TestCase):
     def test_action(self):
-        self.assertEqual(action(54321), 15)
+        self.assertEqual(action(5, "54321"), 15)
 
 if __name__ == '__main__':
-    rl()
-    input = int(rl())
-    print(action(input))
+    n = int(rl())
+    input = rl()
+    print(action(n, input))
     unittest.main()
